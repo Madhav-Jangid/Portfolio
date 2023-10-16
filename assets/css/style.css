@@ -680,7 +680,8 @@ section {
     height: calc(6rem + 4vmin);
     position: relative;
     box-shadow: 5px -3px #0ef;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     margin-bottom: calc(0.7rem + 0.5vmin);
 }
 

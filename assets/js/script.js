@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Define an array of project URLs
 const projectUrls = [
+  "https://madhav-jangid.github.io/Reseume/",
   "https://madhav-jangid.github.io/E-Portal-official/",
   "Error.html",
   // Add more URLs for your projects as needed
@@ -35,8 +36,15 @@ const imgBox = document.getElementById("imgBox");
 const name = document.getElementById("name");
 const profession = document.getElementById("profession");
 const description = document.getElementById("description");
+const details = document.getElementById('details');
 
 let people = [
+  {
+    photo: 'url("assets/images/resume ss.png")',
+    name: "",
+    profession: "My Resume",
+    description: "My meticulously crafted resume, meticulously designed with HTML, CSS, and JavaScript, serves as a dynamic testament to my skills and experiences. It's not just a document; it's my digital persona, showcasing my talents and achievements. In today's competitive world, a well-crafted resume isn't just a piece of paper; it's a powerful tool that opens doors to opportunities. It captures my journey, expertise, and ambitions, ensuring that my story stands out in a crowd. With its interactive design and engaging content, my resume doesn't just inform; it captivates, leaving a lasting impression on potential employers and collaborators. It's more than a summary; it's the key to unlocking my professional future."
+  },
   {
     photo: 'url("assets/images/WhatsApp Image 2023-09-19 at 22.19.41.jpg")',
     name: "",
