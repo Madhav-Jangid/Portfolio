@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Define an array of project URLs
 const projectUrls = [
+  "https://madhav-jangid.github.io/Music-Player/",
   "https://madhav-jangid.github.io/Reseume/",
   "https://madhav-jangid.github.io/E-Portal-official/",
   "Error.html",
@@ -39,6 +40,12 @@ const description = document.getElementById("description");
 const details = document.getElementById('details');
 
 let people = [
+  {
+    photo: 'url("assets/images/Spotify Clone Img.png")',
+    name: "",
+    profession: "Spotify Clone",
+    description: "I've created a Spotify clone using HTML, CSS, and JavaScript. It lets users play, stop, skip, and go back in songs. The interface is user-friendly, with album art, song details, and responsive design. JavaScript powers the core functions, delivering a seamless music streaming experience."
+  },
   {
     photo: 'url("assets/images/resume ss.png")',
     name: "",
