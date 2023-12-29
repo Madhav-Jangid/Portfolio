@@ -192,10 +192,13 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-.btn-box {
+.btn-box{
     display: inline-block;
-    padding: 12px 28px;
-    background: #0ef;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0ef;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
     border-radius: 40px;
     font-size: 16px;
     color: black;
@@ -229,16 +232,21 @@ body {
 }
 
 .about-img {
-    flex: 0 0 30%;
-    /* Adjust as needed */
-    padding: 0 20px;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
     margin-left: 100px;
+    overflow: hidden;
+    box-shadow: 1px 1px 20px #0ef, 1px 1px 40px rgb(0, 174, 255);
+    animation: slideTop 3s;
 }
 
 .about-img img {
     width: 100%;
-    border-radius: 100%;
-    box-shadow: 1px 1px 20px #0ef, 1px 1px 40px rgb(0, 174, 255);
+    height: 100%;
+    object-fit: cover;
+    background-position: 0 0;
+    border-radius: inherit;
 }
 
 .home-content {
@@ -247,7 +255,7 @@ body {
     padding: 0 20px;
     text-align: left;
 }
-
+/* 
 .btn-box {
     display: inline-block;
     margin-top: 20px;
@@ -256,7 +264,7 @@ body {
     color: rgb(0, 0, 0);
     text-decoration: none;
     border-radius: 40px;
-}
+} */
 
 
 
@@ -632,7 +640,8 @@ section {
 
 .arrow-wrapper {
     position: relative;
-    width: 70%;
+    width: 85%;
+    max-width: 60%;
     border-radius: 2rem;
     box-shadow: 0 0 5px #0ef,
         0 0 25px #0ef;
@@ -646,7 +655,7 @@ section {
     text-decoration: none;
     background-color: #0ef;
     width: 200px;
-    height: 45px;
+    min-height: 45px;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -669,6 +678,7 @@ section {
     align-items: center;
     padding-top: calc(2rem + 1vmin);
     width: 100%;
+    max-height: 500px;
 }
 
 #imgBox {
@@ -676,8 +686,8 @@ section {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    width: calc(6rem + 4vmin);
-    height: calc(6rem + 4vmin);
+    min-width: calc(6rem + 4vmin);
+    min-height: calc(6rem + 4vmin);
     position: relative;
     box-shadow: 5px -3px #0ef;
     background-size: cover;
@@ -701,11 +711,25 @@ section {
 #description {
     font-size: calc(0.8rem + 0.3vmin);
     width: 70%;
+    height: 10%;
+    max-height: 230px;
+    overflow: auto;
     max-width: 40rem;
     text-align: center;
     margin-bottom: calc(1.4rem + 1vmin);
     color: rgb(255, 255, 255);
     line-height: 2rem;
+}
+
+::-webkit-scrollbar{
+    background-color: rgba(255, 255, 255, 0);
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    height: 10%;
+    background-color: #0ef;
+    border-radius: 20px;
 }
 
 .arrow {
@@ -1376,10 +1400,17 @@ h3 {
 
     .about-img {
         animation: slideTop 2s;
-        width: 50%;
-        align-items: center;
+        width: 300px;
+        height: 300px;
         margin-bottom: 70px;
         margin-left: -1px;
+    }
+
+    .about-img img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        background-position: center;
     }
 
     .about-text {
