@@ -1,0 +1,41 @@
+@import url("https://db.onlinewebfonts.com/c/72112afab388987941068c3f7a741a53?family=Mark+Pro+Heavy");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amita&display=swap');
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #000000;
+  --foreground: #ebebeb;
+  --secondary: #cbcbcb;
+}
+
+
+
+* {
+  min-height: min-content;
+}
+
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw !important;
+  /* max-width: 1495px; */
+  overflow-x: hidden;
+}
+
+b {
+  color: #fff;
+}
+
+.footer span {
+  display: none;
+}
