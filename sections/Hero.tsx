@@ -7,7 +7,7 @@ import ResumeLink from '@/components/ResumeLink';
 
 export default function Hero() {
     return (
-        <div className="relative h-[100vh] w-full flex flex-col justify-center  pl-[5vw] md:pl-[10vw]">
+        <div id='heroSection' className="relative h-[100vh] w-full flex flex-col justify-center  pl-[5vw] md:pl-[10vw]">
 
             <div className="mt-32">
                 <motion.span

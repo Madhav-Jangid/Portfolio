@@ -23,12 +23,16 @@
 }
 
 
+html,
+body {
+  cursor: url('/assets/images/CursorImage.cur')16 16, auto;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   width: 100vw !important;
-  /* max-width: 1495px; */
   overflow-x: hidden;
 }
 
@@ -38,4 +42,18 @@ b {
 
 .footer span {
   display: none;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 5s linear infinite;
 }

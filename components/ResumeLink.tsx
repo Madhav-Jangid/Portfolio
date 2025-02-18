@@ -1,20 +1,10 @@
 import React from 'react';
 import { ArrowUpRight, X } from 'lucide-react';
+import SpringModal from './SpringModal';
 
 const ResumeLink = () => {
     const [isOpen, setIsOpen] = React.useState(false);
-    const docUrl = "https://docs.google.com/document/d/1HlB1qEM3KI_Y5ckd6eIrTfbYNnjMYAVHWRfUx70C8k0/edit?usp=sharing";
 
-    const handleDownload = () => {
-        const exportUrl = docUrl.replace(/\/edit.*$/, '/export?format=pdf');
-        window.open(exportUrl, '_blank');
-        setIsOpen(false);
-    };
-
-    const handleView = () => {
-        window.open(docUrl, '_blank');
-        setIsOpen(false);
-    };
 
     return (
         <>
@@ -25,8 +15,10 @@ const ResumeLink = () => {
                 <p>Resume</p>
                 <span className="block w-1/3 group-hover:w-full h-[2px] rounded-md bg-white transition-all" />
             </button>
+            <SpringModal isOpen={isOpen} setIsOpen={setIsOpen} />
 
-            {isOpen && (
+
+            {/* {isOpen && (
                 <div onClick={() => setIsOpen(false)} className="fixed w-full h-full backdrop-blur-sm  inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center px-4">
                     <div className="bg-background rounded-xl p-6 w-full max-w-min border-[1px] border-neutral-700 relative">
                         <button
@@ -60,7 +52,7 @@ const ResumeLink = () => {
                         </div>
                     </div>
                 </div>
-            )}
+            )} */}
         </>
     );
 };

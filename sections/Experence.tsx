@@ -93,7 +93,7 @@ export default function Experence() {
                             once: false,
                             margin: "20%"
                         }}
-                        className='block rounded-full w-full bg-foreground' />
+                        className='block rounded-full w-full bg-neutral-700' />
                     <div>
                         <div className='flex items-center justify-between w-full py-3'>
                             <p className='text-paragraph flex items-center gap-2 font-poppins font-bold'>
@@ -125,7 +125,7 @@ export default function Experence() {
                             once: false,
                             margin: "20%"
                         }}
-                        className='block rounded-full w-full bg-foreground' />
+                        className='block rounded-full w-full bg-neutral-700' />
                 </div>
             </div>
 

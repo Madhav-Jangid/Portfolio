@@ -4,7 +4,6 @@ import Experence from "@/sections/Experence";
 import Hero from "@/sections/Hero";
 import Projects from "@/sections/Projects";
 import Services from "@/sections/Services";
-import Contact from "@/sections/Contact";
 
 export default function Home() {
 

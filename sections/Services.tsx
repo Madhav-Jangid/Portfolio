@@ -7,7 +7,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
 export default function Services() {
     return (
-        <div className='flex  w-full justify-between items-center my-32'>
+        <div id='serviceSection' className='flex  w-full justify-between items-center my-32'>
             <div className='w-full md:w-3/5'>
                 <motion.div
                     initial={{ opacity: 0, translateY: 20 }}

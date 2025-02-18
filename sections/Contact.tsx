@@ -4,6 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import MJ_Logo from "@/public/assets/images/MJ_Logo.png"
+import { Link as ScrollLink } from 'react-scroll';
+
 export default function Contact() {
     return (
         <div className='w-full '>
@@ -29,19 +31,51 @@ export default function Contact() {
 
                     <div className='footer w-full md:w-[55%] flex items-start justify-around flex-wrap text-center md:text-start gap-8 md:gap-0 font-poppins text-secondary'>
                         <ul className='flex flex-col gap-3 items-center md:items-start'>
-                            <li className='group text-button font-bold  text-white'>Usefull Links</li>
-                            <Link href={'/'} className='hover:text-white group w-max  text-button'>Home
+                            <li className='group text-button font-bold text-white'>Useful Links</li>
+
+                            <ScrollLink
+                                to="heroSection"
+                                smooth={true}
+                                duration={800}
+                                spy={true}
+                                className='hover:text-white group w-max text-button cursor-pointer'
+                            >
+                                Home
                                 <span className='block w-1/3 group-hover:w-full h-[2px] rounded-md bg-white transition-all'></span>
-                            </Link>
-                            <Link href={'/about'} className='hover:text-white group w-max  text-button'>About
+                            </ScrollLink>
+
+                            <ScrollLink
+                                to="aboutSection"
+                                smooth={true}
+                                duration={800}
+                                spy={true}
+                                className='hover:text-white group w-max text-button cursor-pointer'
+                            >
+                                About
                                 <span className='block w-1/3 group-hover:w-full h-[2px] rounded-md bg-white transition-all'></span>
-                            </Link>
-                            <Link href={'/projects'} className='hover:text-white group w-max  text-button'>Project
+                            </ScrollLink>
+
+                            <ScrollLink
+                                to="projectSection"
+                                smooth={true}
+                                duration={800}
+                                spy={true}
+                                className='hover:text-white group w-max text-button cursor-pointer'
+                            >
+                                Project
                                 <span className='block w-1/3 group-hover:w-full h-[2px] rounded-md bg-white transition-all'></span>
-                            </Link>
-                            <Link href={'/services'} className='hover:text-white group w-max  text-button'>Services
+                            </ScrollLink>
+
+                            <ScrollLink
+                                to="serviceSection"
+                                smooth={true}
+                                duration={800}
+                                spy={true}
+                                className='hover:text-white group w-max text-button cursor-pointer'
+                            >
+                                Services
                                 <span className='block w-1/3 group-hover:w-full h-[2px] rounded-md bg-white transition-all'></span>
-                            </Link>
+                            </ScrollLink>
                         </ul>
                         <ul className='flex flex-col gap-3 items-center md:items-start'>
                             <li className='group text-button font-bold text-white'>Featured Projects</li>

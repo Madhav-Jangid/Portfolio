@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function About() {
     return (
-        <div className='w-full min-h-min h-min md:h-[100vh] py-24 md:py-0 grid place-items-center'>
+        <div id='aboutSection' className='w-full min-h-min h-min md:h-[100vh] py-24 md:py-0 grid place-items-center'>
             <div className='md:w-[55%] w-4/5'>
                 <p className='text-center text-paragraph font-poppins mb-10'>
                     I have over <b>2 years of experience</b> in JavaScript, specializing in building efficient and scalable applications using <b>Next.js, React.js, TypeScript, and Node.js</b>. My work spans both frontend and backend development, with a focus on creating clean and maintainable solutions. Outside of coding, I have a keen interest in <b>chess</b> and enjoy <b>sketching portraits</b>, combining strategy and creativity in my pursuits.
