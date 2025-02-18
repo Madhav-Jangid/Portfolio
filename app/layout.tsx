@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import MainLayout from "@/components/SiteMap";
 
@@ -92,6 +93,7 @@ Alumni Portal, Alumni Network Platform, Alumni Management System, Madhav Jangid 
       </Head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <MainLayout>{children}</MainLayout>
+        <Analytics />
       </body>
     </html>
   );
