@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { ChevronDown, LoaderCircle, Send } from 'lucide-react';
+import { ChevronDown, LoaderCircle, MailCheck, Send } from 'lucide-react';
 
 interface FormData {
     name: string;
@@ -14,6 +14,7 @@ interface FormData {
 const ContactForm = () => {
 
     const [isInProcess, setIsInProcess] = useState<boolean>(false);
+    const [isSent, setIsSent] = useState<boolean>(false);
 
 
     const [formData, setFormData] = useState<FormData>({
@@ -63,7 +64,7 @@ const ContactForm = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
+        setIsSent(false)
         if (validateForm()) {
             try {
                 setIsInProcess(true);
@@ -76,7 +77,6 @@ const ContactForm = () => {
                 });
 
                 if (response.ok) {
-                    alert('Message sent successfully!');
                     setFormData({
                         name: '',
                         email: '',
@@ -86,6 +86,7 @@ const ContactForm = () => {
                         acceptPolicy: false
                     });
                     setIsInProcess(false);
+                    setIsSent(true);
                 } else {
                     alert('Failed to send message. Please try again.');
                 }
@@ -167,7 +168,7 @@ const ContactForm = () => {
                 className='self-end md:self-start 0 w-60 lg:w-72 border-[1px] border-white border-opacity-50  rounded-full h-14 px-6 flex items-center justify-between group'>
                 Contact
                 {!isInProcess ?
-                    <Send className='text-button group-hover:rotate-45 transition-all scale-75' /> :
+                    isSent ? <MailCheck className='text-button  scale-75' color='lightgreen' /> : <Send className='text-button group-hover:rotate-45 transition-all scale-75' /> :
                     <LoaderCircle className='animate-spin' />
                 }
             </button>

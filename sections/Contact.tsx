@@ -6,7 +6,7 @@ import React from 'react'
 import MJ_Logo from "@/public/assets/images/MJ_Logo.png"
 export default function Contact() {
     return (
-        <>
+        <div className='w-full '>
             <InfiniteScroll />
             <div className='w-full min-h-min h-min md:h-[100vh]  px-[7%]'>
                 <div className='w-full py-4 md:py-0 flex flex-col md:flex-row gap-20 md:gap-0 justify-between items-start'>
@@ -39,7 +39,7 @@ export default function Contact() {
                             <Link href={'/projects'} className='hover:text-white group w-max  text-button'>Project
                                 <span className='block w-1/3 group-hover:w-full h-[2px] rounded-md bg-white transition-all'></span>
                             </Link>
-                            <Link href={'/contact'} className='hover:text-white group w-max  text-button'>Contact
+                            <Link href={'/services'} className='hover:text-white group w-max  text-button'>Services
                                 <span className='block w-1/3 group-hover:w-full h-[2px] rounded-md bg-white transition-all'></span>
                             </Link>
                         </ul>
@@ -76,8 +76,8 @@ export default function Contact() {
                     </div>
                 </div>
 
-                <p className='text-center text-secondary text-button w-full h-20'>Madhav Jangid 2025 | All rights reserved ©</p>
+                <p className='text-center text-secondary text-button w-full h-20'>Made with 🩷 by Madhav Jangid</p>
             </div>
-        </>
+        </div>
     )
 }

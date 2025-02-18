@@ -1,15 +1,28 @@
+"use client"
 import Image from 'next/image';
 import React from 'react';
 import ServicesImage from "@/public/assets/images/Services.png";
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-
+import { motion } from 'motion/react';
 export default function Services() {
     return (
         <div className='flex  w-full justify-between items-center my-32'>
             <div className='w-full md:w-3/5'>
-                <div className='relative font-poppins text-supHeading leading-[.90] uppercase px-5 md:px-10 font-semibold'>
-                    <div className=' relative z-10'>
+                <motion.div
+                    initial={{ opacity: 0, translateY: 20 }}
+                    whileInView={{ opacity: "100%", translateY: -20 }}
+                    exit={{ opacity: "100%", translateY: -20 }}
+                    transition={{
+                        duration: .3,
+                        ease: "easeIn"
+                    }}
+                    viewport={{
+                        once: true,
+                        margin: "-60%",
+                        amount: 0
+                    }} className='relative font-poppins text-supHeading leading-[.90] uppercase px-5 md:px-10 font-semibold'>
+                    <div className='h-min relative z-10'>
                         <p className='font-amita text-title lowercase font-normal'>List of</p>
                         <p>Services</p>
                         <p>Packs</p>
@@ -17,7 +30,7 @@ export default function Services() {
                     <div className='md:relative absolute -top-10 sm:-top-40 right-0 md:hidden block h-[100px] w-[20%] sm:w-[40%] object-contain overflow-hidden z-0'>
                         <Image alt='Image-illustration' src={ServicesImage} width={500} height={700} />
                     </div>
-                </div>
+                </motion.div>
                 <div className='z-10 relative w-full my-10 px-5 md:px-10 '>
                     <ul className='w-full flex flex-col gap-4 text-paragraph '>
                         <li className='flex sm:items-center items-start justify-between w-full text-start'>
@@ -54,9 +67,21 @@ export default function Services() {
                     </Link>
                 </div>
             </div>
-            <div className='md:block hidden h-[100px] w-[40%] object-contain overflow-hidden '>
-                <Image alt='Image-illustration' src={ServicesImage} width={500} height={700} />
-            </div>
+            <motion.div
+                initial={{ opacity: 0, translateY: 100 }}
+                whileInView={{ opacity: "100%", translateY: -100 }}
+                exit={{ opacity: 0, translateY: 100 }}
+                transition={{
+                    duration: .8,
+                    ease: "easeOut"
+                }}
+                viewport={{
+                    once: false,
+                    margin: "80%",
+                    amount: 1
+                }} className='md:block hidden h-[100px]  object-contain overflow-hidden '>
+                <Image alt='Image-illustration max-w-[40%] max-h-[30%]' src={ServicesImage} width={400} height={400} />
+            </motion.div>
         </div >
     )
 }

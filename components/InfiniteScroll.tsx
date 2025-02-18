@@ -1,29 +1,16 @@
-
-"use client"
-import React, { useEffect, useRef } from 'react';
+"use client";
+import React, { useEffect, useRef } from "react";
 
 interface InfiniteScrollProps {
-    /**
-     * The text content to be scrolled
-     * @default "Say Hello!"
-     */
-    text?: string;
-    /**
-     * Animation speed in pixels per frame
-     * @default 50
-     */
-    speed?: number;
-    /**
-     * Character used to separate repeated text
-     * @default "•"
-     */
-    separator?: string;
+    text?: string; // Default text
+    speed?: number; // Pixels per frame
+    separator?: string; // Separator between text repeats
 }
 
 const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
     text = "Say Hello!",
-    speed = 50,
-    separator = " • "
+    speed = 1, // Adjust speed dynamically
+    separator = " • ",
 }) => {
     const scrollRef = useRef<HTMLDivElement | null>(null);
     const contentRef = useRef<HTMLDivElement | null>(null);
@@ -31,49 +18,48 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
     useEffect(() => {
         const scrollElement = scrollRef.current;
         const contentElement = contentRef.current;
-
         if (!scrollElement || !contentElement) return;
 
-        // Calculate required duplicates to ensure smooth infinite scroll
-        const containerWidth: number = scrollElement.offsetWidth;
-        const contentWidth: number = contentElement.offsetWidth;
-        const requiredCopies: number = Math.ceil((containerWidth * 2) / contentWidth) + 1;
+        // Ensure enough repetitions for infinite scrolling
+        const containerWidth = scrollElement.offsetWidth;
+        const contentWidth = contentElement.scrollWidth;
 
-        // Create duplicates of the text
-        const textContent: string = Array(requiredCopies).fill(text).join(` ${separator} `);
-        contentElement.textContent = textContent;
+        // Determine how many times to repeat text
+        const requiredCopies = Math.ceil((containerWidth * 2) / contentWidth) + 2;
 
-        let position: number = 0;
+        // Set repeated text in content
+        contentElement.innerHTML = Array(requiredCopies)
+            .fill(text)
+            .join(` ${separator} `);
+
+        let position = 0;
         let animationFrameId: number;
 
-        const scroll = (): void => {
-            position -= 1;
+        const scroll = () => {
+            position -= speed;
 
-            // Reset position when one text length is scrolled
-            if (Math.abs(position) >= contentElement.offsetWidth / requiredCopies) {
+            // Reset when it has fully scrolled one full cycle
+            if (Math.abs(position) >= contentElement.scrollWidth / 2) {
                 position = 0;
             }
 
             contentElement.style.transform = `translateX(${position}px)`;
+
             animationFrameId = requestAnimationFrame(scroll);
         };
 
         animationFrameId = requestAnimationFrame(scroll);
 
-        return () => {
-            cancelAnimationFrame(animationFrameId);
-        };
+        return () => cancelAnimationFrame(animationFrameId);
     }, [text, speed, separator]);
 
     return (
-        <div className="relative w-full overflow-hidden  py-4">
-            <div
-                ref={scrollRef}
-                className="relative w-full"
-            >
+        <div className="relative w-full overflow-hidden py-4">
+            <div ref={scrollRef} className="relative w-full">
                 <div
                     ref={contentRef}
                     className="inline-block whitespace-nowrap text-heading font-satisfies my-10"
+                    style={{ willChange: "transform" }} // Optimization for smooth rendering
                 >
                     {text}
                 </div>
