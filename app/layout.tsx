@@ -15,13 +15,175 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
+
 export const metadata: Metadata = {
-  title: "Madhav Jangid | Software Engineer | SDE | Next.js Dev",
-  description:
-    "Portfolio of Madhav Jangid, a Software Engineer (SDE) specializing in Next.js, React, and full-stack development. Based in Punjab, India.",
-  icons: {
-    icon: "/assets/images/MJ_Logo.png",
+  // 🔹 Comprehensive Title Optimization
+  title: {
+    default: "Madhav Jangid | Software Engineer | SDE | AI & Next.js Dev",
+    template: "%s | Madhav Jangid"
   },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
+
+  // 🔹 Enhanced Description with Target Keywords
+  description: "Madhav Jangid – Software Engineer (SDE) specializing in AI, Next.js, React, and full-stack development. Passionate about open-source, NLP, and scalable web applications.",
+
+  // 🔹 Expanded Keyword Strategy
+  keywords: [
+    // 🎯 **Personal Branding & Career Keywords**
+    "Madhav Jangid",
+    "madhav jangid",
+    "madhav",
+    "madhav bathinda",
+    "madhav rampura phul",
+    "Madhv Jangid developer from Rampura phul",
+    "Madhv Jangid developer from Bathinda",
+    "Madhv Jangid developer from Punjab",
+    "Madhav Jangid portfolio",
+    "Madhav Jangid software engineer",
+    "Madhav Jangid developer",
+    "Madhav Jangid SDE",
+    "Madhav Jangid Next.js",
+    "Madhav Jangid AI developer",
+    "Madhav Jangid full-stack developer",
+    "Madhav Jangid open-source contributor",
+
+    // 💻 **Technical Skills & Tech Stack Keywords**
+    "Next.js developer",
+    "React developer",
+    "MERN stack developer",
+    "AI-powered applications",
+    "TypeScript developer",
+    "GraphQL API",
+    "MongoDB expert",
+    "Web3 development",
+    "NLP engineer",
+    "serverless architecture",
+    "REST API development",
+    "Socket.io real-time apps",
+    "cloud computing with Vercel",
+    "scalable full-stack apps",
+
+    // 🔥 **BroCode-Specific Keywords**
+    "brocode programming language",
+    "hindi programming language",
+    "programming in hindi",
+    "brocode coding",
+    "vernacular coding education",
+    "localized coding environment",
+    "toy programming language",
+    "learn coding in hindi",
+    "multilingual programming",
+    "software development in hindi",
+    "coding without english barrier",
+
+    // 📈 **Startup, Projects & Business**
+    "CodeMilitia project",
+    "AI email automation",
+    "ChillChat app",
+    "TwitBird project",
+    "Baba Farid School of Entrepreneurship",
+    "BFSoE startup ecosystem",
+    "Indian tech startup",
+    "startup business model",
+    "software product development",
+
+    // 🏆 **SEO & General Ranking Boost Keywords**
+    "best full-stack developer portfolio",
+    "hire Next.js developer",
+    "freelance software engineer",
+    "top AI developers in India",
+    "best programming languages 2024",
+    "cutting-edge web development trends"
+  ],
+
+
+
+
+  // 🔹 Advanced Metadata Optimization
+  applicationName: "Madhav Jangid Portfolio",
+  authors: [
+    { name: "Madhav Jangid", url: "https://madhavjangid.vercel.app" }
+  ],
+
+  // 🔹 Open Graph Metadata (Better Social Sharing)
+  openGraph: {
+    title: "Madhav Jangid – AI & Next.js Developer | Portfolio",
+    description: "Madhav Jangid – Software Engineer specializing in AI, Next.js, React, and scalable full-stack development.",
+    url: "https://madhavjangid.vercel.app",
+    siteName: "Madhav Jangid Portfolio",
+    type: "website",
+    locale: "en_US",
+    alternateLocale: ["hi_IN", "en_IN"],
+    images: [
+      {
+        url: "/portfolio-banner.png",
+        width: 1200,
+        height: 630,
+        alt: "Madhav Jangid - Software Engineer Portfolio",
+        type: "image/png"
+      }
+    ]
+  },
+
+  // 🔹 Twitter Card Metadata
+  twitter: {
+    card: "summary_large_image",
+    site: "https://madhavjangid.vercel.app",
+    creator: "Madhav Jangid",
+    title: "Madhav Jangid | Software Engineer | AI & Next.js Dev",
+    description: "AI-powered full-stack developer building scalable applications in Next.js, TypeScript, and more.",
+    images: ["/portfolio-banner.png"]
+  },
+  // 🔹 Verification & Indexing
+  verification: {
+    google: "8S8stYpk2GffzqAgV1CGZeN6B5u6XgXUJ7AXu1r0Iog",
+    yandex: "yandex-verification-token",
+    yahoo: "yahoo-site-verification"
+  },
+
+  // 🔹 Robots.txt Optimization
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1
+    }
+  },
+
+  // 🔹 Canonical & Alternate Links
+  alternates: {
+    canonical: "https://madhavjangid.vercel.app",
+    languages: {
+      "hi-IN": "https://madhavjangid.vercel.app",
+      "en-US": "https://madhavjangid.vercel.app"
+    }
+  },
+
+  // 🔹 Viewport & Web App Configurations
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false
+  },
+
+  // 🔹 Structured Data Hints
+  category: "Software Engineering, AI, Web Development, Developer, Programmers, Coder, Full Stack Developer",
+  classification: "Educational Software, Full-Stack Development",
+
+  // 🔹 Enhanced Website Discoverability
+  other: {
+    "msapplication-TileColor": "#ff6b6b",
+    "mobile-web-app-capable": "yes"
+  }
 };
 
 export default function RootLayout({
@@ -32,42 +194,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        {/* Primary Meta Tags */}
-        <meta name="title" content="Madhav Jangid | Software Engineer | SDE | Next.js Dev" />
-        <meta name="description" content="Portfolio of Madhav Jangid, a Software Engineer (SDE) specializing in Next.js, React, and full-stack development. Based in Punjab, India." />
-        <meta name="author" content="Madhav Jangid" />
-        <meta name="robots" content="index, follow" />
-        <meta name="keywords" content="
-Madhav Jangid, madhav jangid, Jangid Madhav, MadhavJangid, madhavjangid, jangid madhav, jangid, Madhav, madhav, 
-Software Engineer, Software Developer, SDE in Punjab, SDE in Bathinda, SDE in Rampura Phul, SDE in India, 
-Software Engineer in Punjab, Software Engineer in Bathinda, Software Engineer in Rampura Phul, Software Engineer in India, 
-Full-stack Developer, Web Developer, Developer in Punjab, Developer in Bathinda, Developer in Rampura Phul, Developer in India, 
-Entrepreneur in Punjab, Startup Founder, Business Enthusiast, Problem Solver, Coding Mentor, 
-Madhav Jangid Portfolio, Madhav Jangid Website, Personal Website of Madhav Jangid, 
-CodeMilitia, CodeMilitia Website, CodeMilitia Project, Code Militia by Madhav Jangid, 
-ChillChat, ChillChat App, ChillChat Project, Chat Application by Madhav Jangid, 
-TwitBird, TwitBird App, TwitBird Project, Twitter Clone by Madhav Jangid, 
-Lifefly, Lifefly Drone, Lifefly Medical Drone, Lifefly Project, Lifefly by Madhav Jangid, 
-AI Email Sender, AI Email Automation, AI Email Personalization, AI Email Project, 
-BroCode, BroCode Programming Language, BroCode by Madhav Jangid, Custom Programming Language, 
-Museum Chatbot, Smart Ticket Booking Chatbot, Chatbot Project, Madhav Jangid Chatbot, 
-Alumni Portal, Alumni Network Platform, Alumni Management System, Madhav Jangid Alumni Project
-" />
 
-
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://madhavjangid.vercel.app" />
-        <meta property="og:title" content="Madhav Jangid | Software Engineer | SDE | Next.js Dev" />
-        <meta property="og:description" content="Portfolio of Madhav Jangid, a Software Engineer (SDE) specializing in Next.js, React, and full-stack development. Based in Punjab, India." />
-        <meta property="og:image" content="https://madhavjangid.vercel.app/og-image.png" />
-
-        {/* Twitter Card */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://madhavjangid.vercel.app" />
-        <meta property="twitter:title" content="Madhav Jangid | Software Engineer | SDE | Next.js Dev" />
-        <meta property="twitter:description" content="Portfolio of Madhav Jangid, a Software Engineer (SDE) specializing in Next.js, React, and full-stack development. Based in Punjab, India." />
-        <meta property="twitter:image" content="https://madhavjangid.vercel.app/og-image.png" />
+        <link rel="icon" href="/icon.png" type="image/png" sizes="20x30" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
         {/* Schema Markup for Search Engines */}
         <script type="application/ld+json">
