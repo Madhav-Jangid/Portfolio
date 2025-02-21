@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 import MJ_Logo from "@/public/assets/images/MJ_Logo.png";
 import { motion } from 'motion/react';
 import Cursor from './Cursor';
-
+import NavBar from './NavBar';
+import { ParallaxProvider } from 'react-scroll-parallax';
 export default function MainLayout({
     children,
 }: Readonly<{
@@ -39,10 +40,10 @@ export default function MainLayout({
 
 
 
-    return <div>
-        {/* <Cursor /> */}
+    return <ParallaxProvider>
+        <Cursor />
         {loading ? (
-            <div className="w-full h-[100vh] z-50 overflow-hidden grid place-items-center  bg-[#0b0b0b]">
+            <div className="w-full h-[100vh] z-[100] overflow-hidden grid place-items-center  bg-[#0b0b0b]">
                 <Image className="w-28 md:w-36 animate-pulse" alt="Logo" src={MJ_Logo} height={150} width={150} />
             </div>
         ) : (
@@ -55,13 +56,14 @@ export default function MainLayout({
                             duration: 1,
                             ease: "easeInOut"
                         }}
-                        className="absolute top-0 w-full h-[100vh] z-50 overflow-hidden grid place-items-center bg-[#0b0b0b]">
+                        className="absolute top-0 w-full h-[100vh] z-[100] overflow-hidden grid place-items-center bg-[#0b0b0b]">
                         <Image className="w-28 md:w-36 animate-pulse" alt="Logo" src={MJ_Logo} height={150} width={150} />
                     </motion.div>
                 }
+                <NavBar />
                 {children}
                 <Contact />
             </div>
         )}
-    </div>
+    </ParallaxProvider>
 }

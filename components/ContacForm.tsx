@@ -165,7 +165,7 @@ const ContactForm = () => {
                 disabled={isInProcess}
                 type='submit'
                 title='Click to send a email to me'
-                className='self-end md:self-start 0 w-60 lg:w-72 border-[1px] border-white border-opacity-50  rounded-full h-14 px-6 flex items-center justify-between group'>
+                className='z-40 relative bg-background max-w-[16rem] w-full  md:w-[17rem] lg:w-72 border-[1px] border-white border-opacity-50   text-button font-poppins  rounded-full h-12 md:h-14 px-6 flex items-center justify-between group mt-5 md:mt-10 place-self-end'>
                 Contact
                 {!isInProcess ?
                     isSent ? <MailCheck className='text-button  scale-75' color='lightgreen' /> : <Send className='text-button group-hover:rotate-45 transition-all scale-75' /> :

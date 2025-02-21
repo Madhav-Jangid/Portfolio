@@ -42,13 +42,13 @@ export default function Experence() {
                     <motion.div
                         initial={{ opacity: 0, translateY: 100 }}
                         whileInView={{ opacity: "100%", translateY: -100 }}
-                        exit={{ opacity: 0, translateY: 100 }}
+                        exit={{ opacity: "100%", translateY: -100 }}
                         transition={{
                             duration: .8,
                             ease: "easeOut"
                         }}
                         viewport={{
-                            once: false,
+                            once: true,
                             margin: "-60%",
                             amount: 0
                         }}
@@ -61,13 +61,13 @@ export default function Experence() {
                 </div>
                 {/* <p>My Experence</p> */}
             </div>
-            <div className='h-min px-10 py-20 '>
+            <div className='h-min md:px-10 py-20 '>
                 <div className='w-full place-self-end  md:w-[55%] flex flex-col gap-5 z-10 relative'>
                     <p className='w-full text-paragraph font-amita text-end mb-10 underline underline-offset-8 h-min'>Real-World Experience</p>
                     <div>
                         <div className='flex items-center justify-between w-full py-3'>
                             <p className='text-paragraph flex items-center gap-2 font-poppins font-bold'>
-                                <Building2 strokeWidth={1.5} color='lightblue' size={30} />
+                                <Building2 className='hidden md:block' strokeWidth={1.5} color='lightblue' size={30} />
                                 Baba Farid School of Entrepreneurship (BFSoE)</p>
                             <p className='flex items-center gap-3 font-poppins text-button text-secondary '><MapPin color='orange' strokeWidth={1.5} /> Deon</p>
                         </div>
@@ -97,7 +97,7 @@ export default function Experence() {
                     <div>
                         <div className='flex items-center justify-between w-full py-3'>
                             <p className='text-paragraph flex items-center gap-2 font-poppins font-bold'>
-                                <Building2 strokeWidth={1.5} color='lightblue' size={30} />
+                                <Building2 className='hidden md:block' strokeWidth={1.5} color='lightblue' size={30} />
                                 CodeSoft</p>
                             <p className='flex items-center gap-3 font-poppins text-button text-secondary '><Laptop color='orange' strokeWidth={1.5} />Remote</p>
                         </div>

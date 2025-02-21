@@ -28,7 +28,7 @@ export default function CircularText({ text = "SCROLL • DOWN • SCROLL • DO
     };
 
     return (
-        <div className="md:block hidden animate-spin-slow relative mx-auto my-8">
+        <div className="md:block hidden animate-spin-slow relative ">
             {/* Circle background */}
             <div
                 className="rounded-full border-2 border-gray-300 scale-50"

@@ -61,7 +61,7 @@ export default function Services() {
                     <Link
                         href={'/services'}
                         title='Click to read more about services'
-                        className='w-full md:w-[17rem] lg:w-72 border-[1px] rounded-full h-14 px-6 flex items-center justify-between my-10  group font-poppins text-button font-thin'>
+                        className='max-w-[16rem] w-full  md:w-[17rem] lg:w-72 border-[1px] border-white border-opacity-50   text-button font-poppins  rounded-full h-12 md:h-14 px-6 flex items-center justify-between group mt-5'>
                         More details
                         <ArrowUpRight className='text-paragraph group-hover:rotate-45 transition-all scale-75' />
                     </Link>

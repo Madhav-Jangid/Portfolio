@@ -25,7 +25,8 @@
 
 html,
 body {
-  cursor: url('/assets/images/CursorImage.cur')16 16, auto;
+
+  cursor: url('/cursor.png') 16 16, auto !important;
 }
 
 body {
@@ -43,6 +44,8 @@ b {
 .footer span {
   display: none;
 }
+
+
 
 @keyframes spin-slow {
   from {

@@ -1,72 +1,173 @@
 "use client"
 import Link from 'next/link'
-import React from 'react'
-import { motion } from 'motion/react';
-import ResumeLink from '@/components/ResumeLink';
-
+import React, { useRef, useEffect } from 'react'
+import { motion } from 'framer-motion' // Fixed import from motion/react to framer-motion
+import ResumeLink from '@/components/ResumeLink'
+import { ArrowUpRight, Github, InstagramIcon, Linkedin, Mail } from 'lucide-react'
+import Image from 'next/image'
+import me from "@/public/assets/images/me.jpg"
+import { useParallax } from 'react-scroll-parallax'
 
 export default function Hero() {
-    return (
-        <div id='heroSection' className="relative h-[100vh] w-full flex flex-col justify-center  pl-[5vw] md:pl-[10vw]">
+    const imageRef = useRef<HTMLDivElement>(null)
 
-            <div className="mt-32">
-                <motion.span
-                    initial={{ opacity: 0, translateY: 20 }}
-                    whileInView={{ opacity: "100%", translateY: -20 }}
-                    exit={{ opacity: "100%", translateY: -20 }}
+    const imageParallax = useParallax({
+        speed: -10, // Reduced from 100 for smoother parallax
+        targetElement: imageRef.current,
+    })
+
+    // Update parallax target element when ref is available
+    useEffect(() => {
+        if (imageRef.current) {
+            imageParallax.update()
+        }
+    }, [imageRef.current])
+
+    return (
+        <>
+            <div id='heroSection' className="relative h-screen w-full py-10 px-5 md:px-10 flex justify-between flex-col">
+                <div className="w-full md:w-max z-40">
+                    <motion.span
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: -20 }}
+                        transition={{
+                            duration: 0.3,
+                            delay: 1,
+                            ease: "easeIn"
+                        }}
+                        viewport={{
+                            once: true,
+                        }}
+                        className="font-satisfies text-secondary text-l md:text-xl lg:text-3xl">
+                        <span className=''>Hello👋</span> I&apos;m
+                    </motion.span>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: -20 }}
+                        transition={{
+                            duration: 0.3,
+                            delay: 1.1,
+                            ease: "easeIn"
+                        }}
+                        viewport={{
+                            once: true,
+                        }}>
+                        <p className="font-markpro text-title font-heavy md:leading-tight text-white mt-6">
+                            Madhav Jangid,
+                            <span className="font-satisfies text-secondary text-l md:text-xl lg:text-3xl text-[#ebebeb]">
+                                &nbsp; a
+                            </span>
+                        </p>
+                    </motion.div>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: -20 }}
+                        transition={{
+                            duration: 0.3,
+                            delay: 1.2,
+                            ease: "easeIn"
+                        }}
+                        viewport={{
+                            once: true,
+                        }}
+                        className="text-title font-heavy font-markpro md:leading-tight">
+                        full stack-dev.
+                    </motion.p>
+                    {/* <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: -20 }}
+                        transition={{
+                            duration: 0.3,
+                            delay: 1,
+                            ease: "easeIn"
+                        }}
+                        viewport={{
+                            once: true,
+                        }}> */}
+                    <ResumeLink />
+                    {/* </motion.div> */}
+                </div>
+
+                <div ref={imageParallax.ref} className="relative">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 0.8 }}
+                        transition={{
+                            duration: 0.3,
+                            delay: 1.3,
+                            ease: "easeIn"
+                        }}
+                        viewport={{
+                            once: true,
+                        }}
+                        className="select-none absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-full md:w-auto h-3/4 overflow-hidden">
+                        <div className='absolute bg-gradient-to-tr from-black via-transparent to-transparent w-full h-full'></div>
+                        <div className='absolute bg-gradient-to-tl from-black via-transparent to-transparent w-full h-full'></div>
+                        <div className='absolute bg-gradient-to-t from-black via-transparent to-transparent w-full h-full'></div>
+                        <Image
+                            className="aspect-auto object-contain w-full"
+                            alt="My Image"
+                            src={me}
+                            width={650}
+                            priority
+                        />
+                    </motion.div>
+                </div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: -20 }}
                     transition={{
-                        duration: .3,
+                        duration: 0.3,
                         delay: 1,
                         ease: "easeIn"
                     }}
                     viewport={{
                         once: true,
                     }}
-                    className="font-satisfies text-secondary text-xl md:text-2xl lg:text-4xl">
-                    Hello.. Im
-                </motion.span>
-                <motion.p
-                    initial={{ opacity: 0, translateY: 20 }}
-                    whileInView={{ opacity: "100%", translateY: -20 }}
-                    exit={{ opacity: "100%", translateY: -20 }}
-                    transition={{
-                        duration: .3,
-                        delay: 1.1,
-                        ease: "easeIn"
-                    }}
-                    viewport={{
-                        once: true,
-                    }} className="font-markpro text-heading font-heavy leading-[6vw] text-white mt-6">
-                    Madhav Jangid
-                    <span className="font-satisfies text-secondary text-xl md:text-2xl lg:text-4xl text-[#ebebeb]">
-                        &nbsp; &.. Im a
-                    </span>
-                </motion.p>
-                <motion.p
-                    initial={{ opacity: 0, translateY: 20 }}
-                    whileInView={{ opacity: "100%", translateY: -20 }}
-                    exit={{ opacity: "100%", translateY: -20 }}
-                    transition={{
-                        duration: .3,
-                        delay: 1.2,
-                        ease: "easeIn"
-                    }}
-                    viewport={{
-                        once: true,
-                    }} className="text-heading  font-heavy font-markpro leading-[6vw]">
-                    full stack-dev.
+                    className='w-full flex items-end justify-between flex-wrap-reverse z-10'>
+                    <div className='my-4 md:my-0 place-self-end hidden sm:flex items-end justify-start gap-1 text-secondary flex-wrap'>
+                        <Link title='My Github Account' target="_blank" href='https://github.com/Madhav-Jangid' className="text-xs md:text-sm lg:text-base bg-[#111] p-3 border border-[#444] rounded-full">
+                            <Github className='w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5' />
+                        </Link>
+                        <Link title='My LinkedIn Account' target="_blank" href='https://www.linkedin.com/in/madhav-jangid' className="text-xs md:text-sm lg:text-base bg-[#111] p-3 border border-[#444] rounded-full">
+                            <Linkedin className='w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5' />
+                        </Link>
+                        <Link title='My Instagram Account' target="_blank" href='https://www.instagram.com/madhav.ace/' className="text-xs md:text-sm lg:text-base bg-[#111] p-3 border border-[#444] rounded-full">
+                            <InstagramIcon className='w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5' />
+                        </Link>
+                        <Link title='Send me a mail' href='mailto:manumadhavjangid@gmail.com' className="text-xs md:text-sm lg:text-base flex items-center gap-4 bg-[#111] p-3 border border-[#444] rounded-full">
+                            <Mail className='w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5' />
+                            <p className='max-[410px]:hidden block'>manumadhavjangid@gmail.com</p>
+                        </Link>
+                    </div>
 
-                </motion.p>
+                    <div className='w-full md:w-[38%] place-self-end '>
+                        <p className='text-start text-button font-poppins text-secondary'>
+                            <b>Specializing in Next.js and the MERN stack.</b> Let&apos;s turn ideas into reality! I craft seamless digital experiences that bring innovation to life. <b>Ready to build something amazing?</b>
+                        </p>
+                        <Link href='/contact' title='Get in touch with me' className='max-w-[16rem] w-full md:w-[17rem] lg:w-72 border-[1px] border-white border-opacity-50 bg-background text-button font-poppins rounded-full h-12 md:h-14 px-6 flex items-center justify-between group mt-5'>
+                            Contact
+                            <ArrowUpRight className='text-button group-hover:rotate-45 transition-all' />
+                        </Link>
+                    </div>
+                </motion.div>
             </div>
-            {/* <Link
-                target="_blank"
-                href={"https://docs.google.com/document/d/1HlB1qEM3KI_Y5ckd6eIrTfbYNnjMYAVHWRfUx70C8k0/edit?usp=sharing"}
-                className="font-amita lowercase text-paragraph group w-max mt-10"
-            >
-                <p>Resume</p>
-                <span className="block w-1/3 group-hover:w-full h-[2px] rounded-md bg-white transition-all" />
-            </Link> */}
-            <ResumeLink />
-        </div>
+            <div className='relative z-10 my-4 md:my-0 flex sm:hidden items-end justify-center gap-5 text-secondary flex-wrap'>
+                <Link title='My Github Account' target="_blank" href='https://github.com/Madhav-Jangid' className="text-xs md:text-sm lg:text-base bg-[#111] p-3 border border-[#444] rounded-full">
+                    <Github className='w-6 h-6 md:w-7 md:h-7 lg:w-7 lg:h-7' />
+                </Link>
+                <Link title='My LinkedIn Account' target="_blank" href='https://www.linkedin.com/in/madhav-jangid' className="text-xs md:text-sm lg:text-base bg-[#111] p-3 border border-[#444] rounded-full">
+                    <Linkedin className='w-6 h-6 md:w-7 md:h-7 lg:w-7 lg:h-7' />
+                </Link>
+                <Link title='My Instagram Account' target="_blank" href='https://www.instagram.com/madhav.ace/' className="text-xs md:text-sm lg:text-base bg-[#111] p-3 border border-[#444] rounded-full">
+                    <InstagramIcon className='w-6 h-6 md:w-7 md:h-7 lg:w-7 lg:h-7' />
+                </Link>
+                <Link title='Send me a mail' href='mailto:manumadhavjangid@gmail.com' className="text-xs md:text-sm lg:text-base flex items-center gap-4 bg-[#111] p-3 border border-[#444] rounded-full">
+                    <Mail className='w-6 h-6 md:w-7 md:h-7 lg:w-7 lg:h-7' />
+                    <p className='max-[410px]:hidden block'>manumadhavjangid@gmail.com</p>
+                </Link>
+            </div>
+        </>
     )
 }

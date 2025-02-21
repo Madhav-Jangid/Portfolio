@@ -118,7 +118,7 @@ export default function Projects() {
             </div>
 
 
-            <div id='projectSection' className='px-5 md:px-10'>
+            <div id='projectSection' className='px-5 md:px-10 '>
                 <ProjectLink
                     imgSrc={BROCODE}
                     href='https://brocode-cli.vercel.app'
@@ -159,15 +159,15 @@ export default function Projects() {
                     // techStack={['HTML', 'CSS', 'JS']} 
                     subHeading='An e-portal enhancing rural communication and governance.'
                 />
-            </div>
+                <Link
+                    href={'/projects'}
+                    title='Click to view projects in detail'
+                    className='z-40 relative bg-background max-w-[16rem] w-full  md:w-[17rem] lg:w-72 border-[1px] border-white border-opacity-50   text-button font-poppins  rounded-full h-12 md:h-14 px-6 flex items-center justify-between group mt-5 md:mt-10 place-self-end'>
+                    More details
+                    <ArrowUpRight className='text-paragraph group-hover:rotate-45 transition-all scale-75' />
+                </Link>
 
-            <Link
-                href={'/projects'}
-                title='Click to view projects in detail'
-                className='w-full md:w-[17rem] lg:w-72 border-[1px] rounded-full h-14 px-6 flex items-center justify-between my-10  group font-poppins text-button font-thin place-self-end mr-20'>
-                More details
-                <ArrowUpRight className='text-paragraph group-hover:rotate-45 transition-all scale-75' />
-            </Link>
-        </div >
+            </div >
+        </div>
     )
 }

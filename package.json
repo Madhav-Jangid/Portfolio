@@ -16,7 +16,8 @@
     "nodemailer": "^6.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scroll": "^1.9.2"
+    "react-scroll": "^1.9.2",
+    "react-scroll-parallax": "^3.4.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

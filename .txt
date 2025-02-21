@@ -1,4 +1,4 @@
 git add .
-git commit -m "new update"
+git commit -m "Hero Section"
 git branch -M main
 git push -u origin main

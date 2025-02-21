@@ -1,20 +1,32 @@
+"use client"
 import React from 'react';
 import { ArrowUpRight, X } from 'lucide-react';
 import SpringModal from './SpringModal';
-
+import { motion } from 'motion/react';
 const ResumeLink = () => {
     const [isOpen, setIsOpen] = React.useState(false);
 
 
     return (
         <>
-            <button
+            <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: -20 }}
+                transition={{
+                    duration: 0.3,
+                    delay: 1,
+                    ease: "easeIn"
+                }}
+                viewport={{
+                    once: true,
+                }}
+                title='Check out my Resume'
                 onClick={() => setIsOpen(true)}
-                className="font-amita lowercase text-paragraph group w-max mt-10"
+                className="font-ptSans  text-sm md:text-base lg:text-lg group w-max "
             >
                 <p>Resume</p>
                 <span className="block w-1/3 group-hover:w-full h-[2px] rounded-md bg-white transition-all" />
-            </button>
+            </motion.button>
             <SpringModal isOpen={isOpen} setIsOpen={setIsOpen} />
 
 

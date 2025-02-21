@@ -7,9 +7,9 @@ import MJ_Logo from "@/public/assets/images/MJ_Logo.png"
 import { Link as ScrollLink } from 'react-scroll';
 
 export default function Contact() {
-    return (
+    return (<>
+        <InfiniteScroll />
         <div className='w-full '>
-            <InfiniteScroll />
             <div className='w-full min-h-min h-min md:h-[100vh]  px-[7%]'>
                 <div className='w-full py-4 md:py-0 flex flex-col md:flex-row gap-20 md:gap-0 justify-between items-start'>
                     <p className='text-paragraph font-poppins   max-w-full md:max-w-[40%]'>
@@ -113,5 +113,6 @@ export default function Contact() {
                 <p className='text-center text-secondary text-button w-full h-20'>Made with 🩷 by Madhav Jangid</p>
             </div>
         </div>
+    </>
     )
 }
