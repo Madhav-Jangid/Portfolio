@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   // 🔹 Comprehensive Title Optimization
   title: {
-    default: "Madhav Jangid | Software Engineer | SDE | AI & Next.js Dev",
+    default: "Madhav Jangid | Software Engineer | Madhav Jangid Portfolio | SDE | Full-stack Developer",
     template: "%s | Madhav Jangid"
   },
   icons: {
