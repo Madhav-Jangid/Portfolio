@@ -4,6 +4,7 @@ import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import MainLayout from "@/components/SiteMap";
+import { AppProvider } from "./context/AppProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -192,38 +193,39 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <Head>
+    <AppProvider>
+      <html lang="en">
+        <Head>
+          <link rel="icon" href="/icon.png" type="image/png" sizes="20x30" />
+          <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-        <link rel="icon" href="/icon.png" type="image/png" sizes="20x30" />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-
-        {/* Schema Markup for Search Engines */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Madhav Jangid",
-            "jobTitle": "Software Engineer",
-            "url": "https://madhavjangid.vercel.app",
-            "sameAs": [
-              "https://github.com/Madhav-Jangid",
-              "https://linkedin.com/in/madhav-jangid",
-              "https://x.com/MadhavJangid_",
-            ],
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Punjab",
-              "addressRegion": "Bathinda",
-              "addressCountry": "India",
-            }
-          })}
-        </script>
-      </Head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <MainLayout>{children}</MainLayout>
-        <Analytics />
-      </body>
-    </html>
+          {/* Schema Markup for Search Engines */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Madhav Jangid",
+              "jobTitle": "Software Engineer",
+              "url": "https://madhavjangid.vercel.app",
+              "sameAs": [
+                "https://github.com/Madhav-Jangid",
+                "https://linkedin.com/in/madhav-jangid",
+                "https://x.com/MadhavJangid_",
+              ],
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Punjab",
+                "addressRegion": "Bathinda",
+                "addressCountry": "India",
+              }
+            })}
+          </script>
+        </Head>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <MainLayout>{children}</MainLayout>
+          <Analytics />
+        </body>
+      </html>
+    </AppProvider>
   );
 }

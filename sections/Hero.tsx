@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link'
 import React, { useRef, useEffect } from 'react'
-import { motion } from 'framer-motion' // Fixed import from motion/react to framer-motion
+import { motion } from 'framer-motion'
 import ResumeLink from '@/components/ResumeLink'
 import { ArrowUpRight, Github, InstagramIcon, Linkedin, Mail } from 'lucide-react'
 import Image from 'next/image'
@@ -11,22 +11,15 @@ import { useParallax } from 'react-scroll-parallax'
 export default function Hero() {
     const imageRef = useRef<HTMLDivElement>(null)
 
-    const imageParallax = useParallax({
-        speed: -10, // Reduced from 100 for smoother parallax
-        targetElement: imageRef.current,
+    // Initialize parallax without targetElement
+    const { ref: parallaxRef } = useParallax<HTMLDivElement>({
+        speed: -10,
     })
-
-    // Update parallax target element when ref is available
-    useEffect(() => {
-        if (imageRef.current) {
-            imageParallax.update()
-        }
-    }, [imageRef.current])
 
     return (
         <>
-            <div id='heroSection' className="relative h-screen w-full py-10 px-5 md:px-10 flex justify-between flex-col">
-                <div className="w-full md:w-max z-40">
+            <div id='heroSection' className="relative h-screen w-full pb-0 sm:pb-10 pt-10 px-5 md:px-10 flex justify-between flex-col">
+                <div className="w-full md:w-max  mt-20 md:mt-0  z-40 sm:text-start text-center">
                     <motion.span
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: -20 }}
@@ -70,10 +63,10 @@ export default function Hero() {
                         viewport={{
                             once: true,
                         }}
-                        className="text-title font-heavy font-markpro md:leading-tight">
+                        className="text-title font-heavy font-markpro ">
                         full stack-dev.
                     </motion.p>
-                    {/* <motion.div
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: -20 }}
                         transition={{
@@ -83,12 +76,14 @@ export default function Hero() {
                         }}
                         viewport={{
                             once: true,
-                        }}> */}
-                    <ResumeLink />
-                    {/* </motion.div> */}
+                        }}
+                        className='relative'
+                    >
+                        <ResumeLink />
+                    </motion.div>
                 </div>
 
-                <div ref={imageParallax.ref} className="relative">
+                <div ref={parallaxRef} className="relative">
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 0.8 }}
@@ -142,31 +137,33 @@ export default function Hero() {
                         </Link>
                     </div>
 
-                    <div className='w-full md:w-[38%] place-self-end '>
-                        <p className='text-start text-button font-poppins text-secondary'>
+                    <div className='w-full md:w-[38%] place-self-end'>
+                        <p className='text-center sm:text-start text-button font-poppins text-secondary'>
                             <b>Specializing in Next.js and the MERN stack.</b> Let&apos;s turn ideas into reality! I craft seamless digital experiences that bring innovation to life. <b>Ready to build something amazing?</b>
                         </p>
-                        <Link href='/contact' title='Get in touch with me' className='max-w-[16rem] w-full md:w-[17rem] lg:w-72 border-[1px] border-white border-opacity-50 bg-background text-button font-poppins rounded-full h-12 md:h-14 px-6 flex items-center justify-between group mt-5'>
+                        <Link href='/contact' title='Get in touch with me' className='max-w-[16rem] w-full md:w-[17rem] lg:w-72 border-[1px] border-white border-opacity-50 bg-background text-button font-poppins rounded-full h-12 md:h-14 px-6 hidden sm:flex items-center justify-between group mt-5 '>
                             Contact
                             <ArrowUpRight className='text-button group-hover:rotate-45 transition-all' />
                         </Link>
+
+                        <div className='relative z-10 my-4 md:my-0 flex sm:hidden items-end justify-center gap-5 text-secondary flex-wrap'>
+                            <Link title='My Github Account' target="_blank" href='https://github.com/Madhav-Jangid' className="text-xs md:text-sm lg:text-base bg-[#111] p-3 border border-[#444] rounded-full">
+                                <Github className='w-6 h-6 md:w-7 md:h-7 lg:w-7 lg:h-7' />
+                            </Link>
+                            <Link title='My LinkedIn Account' target="_blank" href='https://www.linkedin.com/in/madhav-jangid' className="text-xs md:text-sm lg:text-base bg-[#111] p-3 border border-[#444] rounded-full">
+                                <Linkedin className='w-6 h-6 md:w-7 md:h-7 lg:w-7 lg:h-7' />
+                            </Link>
+                            <Link title='My Instagram Account' target="_blank" href='https://www.instagram.com/madhav.ace/' className="text-xs md:text-sm lg:text-base bg-[#111] p-3 border border-[#444] rounded-full">
+                                <InstagramIcon className='w-6 h-6 md:w-7 md:h-7 lg:w-7 lg:h-7' />
+                            </Link>
+                            <Link title='Send me a mail' href='mailto:manumadhavjangid@gmail.com' className="text-xs md:text-sm lg:text-base flex items-center gap-4 bg-[#111] p-3 border border-[#444] rounded-full">
+                                <Mail className='w-6 h-6 md:w-7 md:h-7 lg:w-7 lg:h-7' />
+                                <p className='max-[410px]:hidden block'>manumadhavjangid@gmail.com</p>
+                            </Link>
+                        </div>
+
                     </div>
                 </motion.div>
-            </div>
-            <div className='relative z-10 my-4 md:my-0 flex sm:hidden items-end justify-center gap-5 text-secondary flex-wrap'>
-                <Link title='My Github Account' target="_blank" href='https://github.com/Madhav-Jangid' className="text-xs md:text-sm lg:text-base bg-[#111] p-3 border border-[#444] rounded-full">
-                    <Github className='w-6 h-6 md:w-7 md:h-7 lg:w-7 lg:h-7' />
-                </Link>
-                <Link title='My LinkedIn Account' target="_blank" href='https://www.linkedin.com/in/madhav-jangid' className="text-xs md:text-sm lg:text-base bg-[#111] p-3 border border-[#444] rounded-full">
-                    <Linkedin className='w-6 h-6 md:w-7 md:h-7 lg:w-7 lg:h-7' />
-                </Link>
-                <Link title='My Instagram Account' target="_blank" href='https://www.instagram.com/madhav.ace/' className="text-xs md:text-sm lg:text-base bg-[#111] p-3 border border-[#444] rounded-full">
-                    <InstagramIcon className='w-6 h-6 md:w-7 md:h-7 lg:w-7 lg:h-7' />
-                </Link>
-                <Link title='Send me a mail' href='mailto:manumadhavjangid@gmail.com' className="text-xs md:text-sm lg:text-base flex items-center gap-4 bg-[#111] p-3 border border-[#444] rounded-full">
-                    <Mail className='w-6 h-6 md:w-7 md:h-7 lg:w-7 lg:h-7' />
-                    <p className='max-[410px]:hidden block'>manumadhavjangid@gmail.com</p>
-                </Link>
             </div>
         </>
     )

@@ -1,7 +1,12 @@
+import { useAppContext } from "@/app/context/AppProvider";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, CircleAlert } from "lucide-react";
 
-const SpringModal = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: any }) => {
+const SpringModal = () => {
+
+    const { isOpen, setIsOpen } = useAppContext();
+
+
     const docUrl = "https://docs.google.com/document/d/1HlB1qEM3KI_Y5ckd6eIrTfbYNnjMYAVHWRfUx70C8k0/edit?usp=sharing";
 
     const handleDownload = () => {

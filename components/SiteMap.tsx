@@ -8,6 +8,7 @@ import { motion } from 'motion/react';
 import Cursor from './Cursor';
 import NavBar from './NavBar';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import SpringModal from './SpringModal';
 export default function MainLayout({
     children,
 }: Readonly<{
@@ -61,6 +62,8 @@ export default function MainLayout({
                     </motion.div>
                 }
                 <NavBar />
+                <SpringModal />
+
                 {children}
                 <Contact />
             </div>

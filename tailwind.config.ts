@@ -24,12 +24,16 @@ export default {
         amita: ["Amita", "sans-serif"]
       },
       fontSize: {
-        supHeading: "clamp(40px,11vw,170px)",
-        heading: "clamp(36px,6vw,80px)",
-        subHeading: "clamp(19px,5vw,80px)",
-        title: "clamp(28px,5vw,60px)",
-        paragraph: "clamp(18px, 2vw, 27px)",
-        button: "clamp(15px,2vw,19px)"
+        supHeading: ["clamp(40px, 10vw, 150px)", { lineHeight: "1.1 !important" }],
+        heading: ["clamp(38px, 6vw, 90px)", { lineHeight: "1.15 !important" }],
+        subHeading: ["clamp(24px, 4.5vw, 70px)", { lineHeight: "1.2 !important" }],
+        title: ["clamp(32px, 5vw, 60px)", { lineHeight: "1.3 !important" }],
+        paragraph: ["clamp(18px, 2.5vw, 28px)", { lineHeight: "1.5 !important" }],
+        button: ["clamp(16px, 2vw, 20px)", { lineHeight: "1.4 !important" }],
+        sm: ["16px", { lineHeight: "1.4 !important" }], // text-sm
+        base: ["18px", { lineHeight: "1.5 !important" }], // md:text-base
+        lg: ["20px", { lineHeight: "1.6 !important" }], // lg:text-lg
+
       },
       fontWeight: {
         heavy: "900"

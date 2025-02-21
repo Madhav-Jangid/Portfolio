@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import React from 'react';
 import { motion } from 'motion/react';
+import Image from 'next/image';
+import MJ_Logo from "@/public/assets/images/MJ_Logo.png"
 
 export default function NavBar() {
     return (
@@ -16,8 +18,14 @@ export default function NavBar() {
             viewport={{
                 once: true,
             }}
-            className='fixed z-50 top-0 w-full flex items-center justify-between h-28 px-5 md:px-10 bg-gradient-to-b from-black to-transparent'>
-            <Link href={'/'} className="font-satisfies text-secondary text-l md:text-xl lg:text-3xl">Hello👋</Link>
+            className='fixed z-50 top-0 w-full flex items-center justify-between h-28  pr-0 sm:pr-5  px-5 md:px-10 bg-gradient-to-b from-black to-transparent'>
+
+
+
+            <Link href={'/'} className="md:block hidden font-satisfies text-secondary text-l md:text-xl lg:text-3xl">Hello👋</Link>
+            <Link href={'/'} className="block md:hidden font-satisfies text-secondary text-l md:text-xl lg:text-3xl">
+                <Image src={MJ_Logo} alt='logo' width={35} height={35} />
+            </Link>
 
 
             <div className='flex items-center justify-evenly w-64  h-1/2  sideNav'>
