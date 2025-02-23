@@ -99,6 +99,7 @@ export default function Hero() {
                         <div className='absolute bg-gradient-to-tr from-black via-transparent to-transparent w-full h-full'></div>
                         <div className='absolute bg-gradient-to-tl from-black via-transparent to-transparent w-full h-full'></div>
                         <div className='absolute bg-gradient-to-t from-black via-transparent to-transparent w-full h-full'></div>
+
                         <Image
                             className="aspect-auto object-contain w-full"
                             alt="My Image"

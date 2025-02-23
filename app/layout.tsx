@@ -27,8 +27,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
-    apple: "/icon.png",
+    apple: "/apple-touch-icon.png",
   },
+
 
   // 🔹 Enhanced Description with Target Keywords
   description: "Madhav Jangid – Software Engineer (SDE) specializing in AI, Next.js, React, and full-stack development. Passionate about open-source, NLP, and scalable web applications.",
@@ -36,10 +37,22 @@ export const metadata: Metadata = {
   // 🔹 Expanded Keyword Strategy
   keywords: [
     // 🎯 **Personal Branding & Career Keywords**
+    "madhav",
     "Madhav Jangid",
     "madhav jangid",
-    "madhav",
-    "madhav bathinda",
+    "madhav jangid",
+    "madhav jangid site",
+    "madhav jangid website",
+    "madhav jangid portfolio",
+    "madhav jangid personal site",
+    "madhav jangid personal site portfolio",
+    "madhav jangid personal portfolio site",
+    "madhav jangid github",
+    "madhav jangid webdeveloper",
+    "madhav jangid coder",
+    "madhav jangid programmer",
+    "madhav jangid programmer",
+    "madhav jangid bathinda",
     "madhav rampura phul",
     "Madhv Jangid developer from Rampura phul",
     "Madhv Jangid developer from Bathinda",
@@ -183,7 +196,7 @@ export const metadata: Metadata = {
   // 🔹 Enhanced Website Discoverability
   other: {
     "msapplication-TileColor": "#ff6b6b",
-    "mobile-web-app-capable": "yes"
+    "mobile-web-app-capable": "yes",
   }
 };
 
@@ -196,8 +209,13 @@ export default function RootLayout({
     <AppProvider>
       <html lang="en">
         <Head>
-          <link rel="icon" href="/icon.png" type="image/png" sizes="20x30" />
-          <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+          <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+          <link rel="shortcut icon" href="/favicon.ico" />
+          {/* <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> */}
+          <meta name="apple-mobile-web-app-title" content="Madhav’s Portfolio" />
+          <link rel="manifest" href="/site.webmanifest" />
+
 
           {/* Schema Markup for Search Engines */}
           <script type="application/ld+json">

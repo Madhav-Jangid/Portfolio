@@ -45,10 +45,10 @@ const SpringModal = () => {
                             <h3 className="text-4xl font-bold text-center mb-2">
                                 Access the Document
                             </h3>
-                            <p className="text-center text-secondary text-button px-10 font-poppins mb-6  mx-auto">
+                            <p className="text-center text-secondary text-button px-0 md:px-10 font-poppins mb-6  mx-auto">
                                 You can either view this document online or download it as a PDF for offline access.
                             </p>
-                            <div className="flex items-center justify-center gap-5 px-5 flex-col md:flex-row font-poppins text-button">
+                            <div className="flex items-center justify-center gap-5 px-0 md:px-5 flex-col md:flex-row font-poppins text-button w-full">
                                 <button
                                     onClick={handleView}
                                     className="w-full md:w-[17rem] lg:w-72 border-[1px] border-white rounded-full h-14 px-6 flex items-center justify-between bg-foreground text-background group"
