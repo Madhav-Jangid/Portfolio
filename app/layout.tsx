@@ -17,6 +17,46 @@ const geistMono = Geist_Mono({
 });
 
 
+export const iconConfig = {
+  favicon: {
+    default: "/favicon.ico",
+    svg: "/favicon.svg",
+    png96: "/favicon-96x96.png",
+  },
+
+  appIcons: {
+    default: "/icon.png",
+    svg: "/icon.svg",
+    appleTouch: "/apple-touch-icon.png",
+    webAppManifest: {
+      small: "/web-app-manifest-192x192.png",
+      large: "/web-app-manifest-512x512.png"
+    }
+  },
+
+  manifest: "/site.webmanifest"
+};
+
+export const updatedMetadata = {
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/icon.svg",
+        color: "#ff6b6b",
+      },
+    ],
+  },
+};
 
 export const metadata: Metadata = {
   // 🔹 Comprehensive Title Optimization
@@ -24,11 +64,8 @@ export const metadata: Metadata = {
     default: "Madhav Jangid | Software Engineer | Madhav Jangid Portfolio | SDE | Full-stack Developer",
     template: "%s | Madhav Jangid"
   },
-  icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/apple-touch-icon.png",
-  },
+  icons: updatedMetadata.icons,
+
 
 
   // 🔹 Enhanced Description with Target Keywords
@@ -209,15 +246,8 @@ export default function RootLayout({
     <AppProvider>
       <html lang="en">
         <Head>
-          <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-          <link rel="shortcut icon" href="/favicon.ico" />
-          {/* <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> */}
-          <meta name="apple-mobile-web-app-title" content="Madhav’s Portfolio" />
           <link rel="manifest" href="/site.webmanifest" />
-
-
-          {/* Schema Markup for Search Engines */}
+          <meta name="apple-mobile-web-app-title" content="Madhav's Portfolio" />
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
