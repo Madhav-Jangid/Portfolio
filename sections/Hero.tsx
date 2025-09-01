@@ -32,7 +32,7 @@ export default function Hero() {
                             once: true,
                         }}
                         className="font-satisfies text-secondary text-l md:text-xl lg:text-3xl">
-                        <span className=''>Hello👋</span> I&apos;m
+                        <span className=''>Hi👋</span> I&apos;m
                     </motion.span>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
