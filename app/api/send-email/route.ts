@@ -17,18 +17,18 @@ export async function POST(req: Request) {
 
     try {
         const message = `
-        Hey Madhav,
+Hey Madhav,
 
-        I'm ${body.name}, and I'm interested in connecting with you. Here are my details:
+I'm ${body.name}, and I'm interested in connecting with you. Here are my details:
+================================================================
 
-        - Interest: ${body.interest}
-        - Message: ${body.message}
+Interest: ${body.interest}
+Message: ${body.message}
 
-        Looking forward to hearing from you!
-
-        Best regards,
-        ${body.name}
-        `;
+================================================================
+Looking forward to hearing from you!
+Best regards,
+${body.name}`;
 
 
 
