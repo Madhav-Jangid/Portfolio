@@ -23,7 +23,8 @@ I'm ${body.name}, and I'm interested in connecting with you. Here are my details
 ================================================================
 
 Interest: ${body.interest}
-Message: ${body.message}
+
+${body.message}
 
 ================================================================
 Looking forward to hearing from you!
