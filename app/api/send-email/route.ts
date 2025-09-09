@@ -16,8 +16,7 @@ export async function POST(req: Request) {
     });
 
     try {
-        const message = `
-Hey Madhav,
+        const message = `Hey Madhav,
 
 I'm ${body.name}, and I'm interested in connecting with you. Here are my details:
 ================================================================
