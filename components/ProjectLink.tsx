@@ -89,7 +89,7 @@ export const ProjectLink = ({ heading, imgSrc, subHeading, href }: { heading: st
                     </motion.span>
                 </div>
 
-                <motion.div
+                {/* <motion.div
                     style={{
                         position: isHovered ? "absolute" : "relative",
                         left: isHovered ? hoverTextX : "50%",
@@ -100,7 +100,7 @@ export const ProjectLink = ({ heading, imgSrc, subHeading, href }: { heading: st
                     className="hidden md:block absolute pointer-events-none z-50 px-4 py-2 mx-auto text-button font-poppins text-background bg-foreground rounded-md shadow-lg"
                 >
                     Visit {heading}
-                </motion.div>
+                </motion.div> */}
 
                 <motion.div
                     variants={{

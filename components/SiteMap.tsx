@@ -64,7 +64,7 @@ export default function MainLayout({
                 <NavBar />
                 <SpringModal />
                 {children}
-                <div className='fixed z-50 bottom-0 w-full flex items-center justify-between h-28  pr-0 sm:pr-5  px-5 md:px-10 bg-gradient-to-t from-black to-transparent' />
+                {/* <div className='fixed z-50 bottom-0 w-full flex items-center justify-between h-28  pr-0 sm:pr-5  px-5 md:px-10 bg-gradient-to-t from-black to-transparent' /> */}
                 <Contact />
             </div>
         )}
